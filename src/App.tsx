@@ -1,8 +1,18 @@
+import { useEffect, useState } from 'react'
 import Escena from './componentes/escena/Escena.js'
+import frases from './frases.json'
+
 const App = () => {
+  const [textos, setTextos] = useState([]);
+
+  useEffect (() => {
+    setTextos(frases);
+  }, []);
   return (
     <>
-      <Escena texto="Nuestro héroe estaba flotando por el espacio sideral cuando a lo lejos divisó una nave espacial"/>
+    {textos.map((frase, index) => (
+       <Escena key={index} texto={frase.texto}/>
+    ))}
     </>
   )
 }
