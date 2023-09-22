@@ -1,6 +1,8 @@
+import { EstiloFrases } from "./Estilos";
+
 const Escena = (props: any) => {
     return (
-      <p>{props.texto}</p>  
+      <EstiloFrases>{props.texto}</EstiloFrases>  
     );
 }
 
